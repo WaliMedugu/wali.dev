@@ -407,6 +407,8 @@ function initBookingForm() {
     const form = document.getElementById('booking-form');
     if (!form) return;
 
+    const submitBtn = form.querySelector('button[type="submit"]');
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -420,31 +422,72 @@ function initBookingForm() {
         document.querySelectorAll('.chip-toggle.selected').forEach(chip => {
             selectedChips.push(chip.dataset.chip || chip.textContent.trim());
         });
-        // Fallback to select if chips not present
         const engagementType = selectedChips.length > 0
             ? selectedChips.join(', ')
             : getVal('form-engagement');
 
-        const formData = {
-            name: getVal('form-name'),
-            email: getVal('form-email'),
-            website: getVal('form-website'),
-            engagementType,
-            details: getVal('form-details'),
-            timestamp: new Date().toISOString()
-        };
+        const name = getVal('form-name');
+        const email = getVal('form-email');
+        const website = getVal('form-website');
+        const details = getVal('form-details');
 
-        if (!formData.name || !formData.email || !formData.engagementType) {
+        if (!name || !email || !engagementType) {
             alert('Please fill out your name, email, and what you want.');
             return;
         }
 
-        const currentSubmissions = JSON.parse(localStorage.getItem('wali_dev_leads') || '[]');
-        currentSubmissions.push(formData);
-        localStorage.setItem('wali_dev_leads', JSON.stringify(currentSubmissions));
+        // Show loading state
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+        }
 
-        console.log('CRM API Success: Lead processed', formData);
-        window.location.href = 'thank-you.html';
+        const payload = {
+            access_key: "5a7950e4-2a36-43be-af49-0ea281ac81d2",
+            name: name,
+            email: email,
+            website: website,
+            subject: `New Lead from Wali.Dev - ${name}`,
+            engagement_type: engagementType,
+            message: details
+        };
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(async (response) => {
+            const json = await response.json();
+            if (response.status === 200 && json.success) {
+                // Cache locally as mock CRM backup
+                const formData = { name, email, website, engagementType, details, timestamp: new Date().toISOString() };
+                const currentSubmissions = JSON.parse(localStorage.getItem('wali_dev_leads') || '[]');
+                currentSubmissions.push(formData);
+                localStorage.setItem('wali_dev_leads', JSON.stringify(currentSubmissions));
+
+                console.log('CRM API Success: Lead processed', json);
+                window.location.href = 'thank-you.html';
+            } else {
+                console.error('Submission failed', json);
+                alert(json.message || 'Something went wrong. Please try again.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Application';
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error submitting form', error);
+            alert('Form submission failed. Please check your network connection and try again.');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Application';
+            }
+        });
     });
 }
 
@@ -801,54 +844,7 @@ function initD3Graph() {
     }
 }
 
-/* ==========================================================================
-   Booking Form Submission Handler (Mock Backend / CRM) - Safe for Optional Fields
-   ========================================================================== */
-function initBookingForm() {
-    const form = document.getElementById('booking-form');
-    if (!form) return;
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Safe helper to read DOM element values without throwing errors if removed
-        const getVal = (id) => {
-            const el = document.getElementById(id);
-            return el ? el.value : '';
-        };
-
-        // Retrieve form field values
-        const formData = {
-            name: getVal('form-name'),
-            email: getVal('form-email'),
-            company: getVal('form-company'),
-            website: getVal('form-website'),
-            engagementType: getVal('form-engagement'),
-            budget: getVal('form-budget'),
-            timeline: getVal('form-timeline'),
-            projectType: getVal('form-project-type'),
-            details: getVal('form-details'),
-            timestamp: new Date().toISOString()
-        };
-
-        // Validate basic parameters
-        if (!formData.name || !formData.email || !formData.engagementType) {
-            alert('Please fill out all required fields.');
-            return;
-        }
-
-        // Save application to localStorage (mock backend lead storage)
-        const currentSubmissions = JSON.parse(localStorage.getItem('wali_dev_leads') || '[]');
-        currentSubmissions.push(formData);
-        localStorage.setItem('wali_dev_leads', JSON.stringify(currentSubmissions));
-
-        // Submit log mimicking network API response
-        console.log('CRM API Success: Lead processed successfully', formData);
-
-        // Redirect to Thank You page
-        window.location.href = 'thank-you.html';
-    });
-}
 
 /* ==========================================================================
    Dynamic Footer Widgets Populator (Exactly 32 elements)
