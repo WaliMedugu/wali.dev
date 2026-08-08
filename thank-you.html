@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You — Wali</title>
+    <meta name="description" content="Your application has been received.">
+    
+    <!-- Google SEO & Search Listings Meta Tags -->
+    <!-- Thank you page should not be indexed in search results to preserve analytics accuracy -->
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://wali.dev/thank-you.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wali.dev/thank-you.html">
+    <meta property="og:title" content="Thank You — Wali">
+    <meta property="og:description" content="Your application has been received.">
+    <meta property="og:image" content="https://wali.dev/rescs/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thank You Page - Wali.Dev">
+    <meta property="og:site_name" content="Wali.Dev">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://wali.dev/thank-you.html">
+    <meta name="twitter:title" content="Thank You — Wali">
+    <meta name="twitter:description" content="Your application has been received.">
+    <meta name="twitter:image" content="https://wali.dev/rescs/og-image.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div class="grid-bg-wrapper">
+        <!-- Navigation Header -->
+        <header class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="logo">
+                    <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                        <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                    </svg>
+                    WALI.DEV
+                </a>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="proof.html" class="nav-link">Proof</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="book.html" class="nav-link">Book Roadmap</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="mailto:blueparticlestudios@gmail.com" class="email-link">blueparticlestudios@gmail.com</a>
+                    <a href="book.html" class="btn btn-primary">Book Roadmap</a>
+                </div>
+                <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
+                    Menu <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="proof.html">Proof</a>
+            <a href="about.html">About</a>
+            <a href="book.html">Book Roadmap</a>
+            <a href="mailto:blueparticlestudios@gmail.com" style="font-size: 16px; font-weight: 500; margin-top: 20px; color: var(--primary);">blueparticlestudios@gmail.com</a>
+        </div>
+
+        <!-- Thank You Hero / Box Container -->
+        <section class="container" style="padding-top: 100px; padding-bottom: 100px;">
+            <div class="cta-box" style="max-width: 600px; margin: 0 auto; text-align: left; padding: 48px;">
+                <span class="eyebrow">Application Received</span>
+                <h1 style="font-size: 28px; font-weight: 800; margin-top: 12px; margin-bottom: 16px;">Thank you. Your project details are in.</h1>
+                <p style="font-size: 15px; color: var(--dark-muted); margin-bottom: 30px;">
+                    Next steps:
+                </p>
+                
+                <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px;">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 2px;">1</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 14px;">I review your submission</div>
+                            <div style="font-size: 12px; color: var(--dark-muted); margin-top: 2px;">Reviewing your tech stack choice and timeline requirements.</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 2px;">2</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 14px;">You receive a reply</div>
+                            <div style="font-size: 12px; color: var(--dark-muted); margin-top: 2px;">Direct confirmation or clarifying details via email in under 24 hours.</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 2px;">3</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 14px;">We schedule the alignment session</div>
+                            <div style="font-size: 12px; color: var(--dark-muted); margin-top: 2px;">Calendar link sent to schedule our 30-minute walkthrough call.</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 2px;">4</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 14px;">You get your technical blueprint</div>
+                            <div style="font-size: 12px; color: var(--dark-muted); margin-top: 2px;">A custom database blueprint schema and project execution timeline.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    <a href="proof.html" class="btn btn-secondary">View Proof</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="container">
+                <!-- Floating Dashboard widgets in Footer (Populated dynamically by script.js) -->
+                <div class="footer-widgets-area"></div>
+
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo">
+                            <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                                <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                            </svg>
+                            WALI.DEV
+                        </a>
+                        <p class="footer-desc">Premium technical partner for startups and agencies scaling mobile and web platforms.</p>
+                    </div>
+                    <div class="footer-links-grid">
+                        <div class="footer-col">
+                            <h4>Menu</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="proof.html">Proof</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="book.html">Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="mailto:blueparticlestudios@gmail.com">blueparticlestudios@gmail.com</a></li>
+                                <li><a href="tel:+2349061950587" style="white-space:nowrap;">+234 906 195 0587</a></li>
+                            </ul>
+                            <h4 style="margin-top: 20px;">Socials</h4>
+                            <ul>
+                                <li><a href="https://wa.me/2349061950587" target="_blank">WhatsApp</a></li>
+                                <li><a href="https://instagram.com/w_wali_i" target="_blank">Instagram</a></li>
+                                <li><a href="https://github.com/WaliMedugu" target="_blank">GitHub</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Wali. Premium technical partner. <a href="terms.html" style="color: var(--primary); text-decoration: none;">Terms of Service</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Main JS entrypoint -->
+    <script src="script.js"></script>
+</body>
+</html>

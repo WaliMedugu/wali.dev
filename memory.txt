@@ -1,0 +1,84 @@
+WALI.DEV - Premium Technical Partner Website Memory
+
+Features Added:
+1. Project Initialization
+   - Created memory.txt to document features and progress.
+   - Defined structure for light-themed premium portfolio matching ChronoTask visual design (dot-grid backgrounds, high-end typography, glassmorphism, floating 3D-like cards, custom sticky notes).
+
+2. Style System (style.css)
+   - Configured custom fonts (Plus Jakarta Sans, Caveat).
+   - Designed light dotted-grid matrix background pattern.
+   - Structured hero, buttons, eyebrows, navbar, split sections, and footer styles.
+   - Built custom layouts matching ChronoTask visual elements: yellow handwritten sticky note with pushpin, checklist widgets, progress indicators, 3D-styled floating widgets.
+   - Formulated ChronoTask-style 3-card pricing system grid.
+   - Integrated full mobile-first responsive break-points.
+   - Fixed section vertical spacing and specificity collision paddings.
+   - Fixed mobile menu raw text leaking on desktop by moving the default `.mobile-menu { display: none; }` selector out of media queries.
+   - Set footer widgets to dynamically render 32 absolute floating badges with organic random scatter parameters.
+   - Adjusted hero widget container widths to `320px` to comfortably host larger data tables.
+   - Appended custom layout rules for the interactive split before-and-after design sliders (`.comparison-container`, handles, divider lines, and mock layouts).
+   - Appended custom `.projects-grid` styling for the 2-column showcase section with media query definitions that break down to 1 column on tablet and mobile viewports (widths under 992px) for perfect responsiveness.
+
+3. Script Engine (script.js)
+   - Created mobile navigation toggle menu overlay controller.
+   - Configured interactive D3.js directed force-layout graph visualizer displaying architectural dependency flows. Includes custom rectangular node cards, color themes, link paths, drag force rules, and hover highlight transitions.
+   - Modified D3 simulation parameters (charge: -1200, link distance: 180, collision: 80) to completely prevent node overlaps and card touch collisions.
+   - Replaced generic graph nodes with a real Supply Chain Intelligence platform topology (SAP Sync, Oracle Inventory, Kafka Bus, Node.js Worker, GraphQL Router, Postgres DB, D3 Solver, Web Fleet Portal, Driver App, etc.).
+   - Programmed booking lead capturing mechanism utilizing localStorage cache system as mock CRM database, with safe optional fields values query to prevent TypeErrors when forms are simplified.
+   - Added `initFooterWidgets()` to dynamically generate exactly 32 floating badges in the footer area using a scatter layout.
+   - Added `initComparisonSliders()` to capture range slider movement drag inputs and dynamically adjust CSS clip-paths (`--clip-pos`).
+
+4. Pages Built & Updated:
+   - index.html: Refactored copywriting to eliminate fancy corporate jargon, repositioning as an "Affordable & Reliable Dev Team" that builds Flutter apps and web dashboards. Formulated bargain-oriented hero and pricing section copy. Integrated Before/After design comparison sliders. Shifted pilot audit option to Free ($0). Aligned footer to Instagram `w_wali_i` and GitHub `WaliMedugu` profiles. Added new "Real Shipped Work" portfolio section highlighting Arguuu ($40 app) and Harbor Haven Foundation ($20 website) using real logos, Play Store slides (`rescs/`), and an interactive Vercel live `<iframe>` web preview. Cleaned up card styles using `.projects-grid` and inline overrides (`flex-grow: 0;` on paragraphs) to prevent vertical layout height stretching and ensure absolute mobile responsiveness.
+   - proof.html: Refactored case study details to use clear, direct developer terminology rather than systems-engineering jargon. Added the responsive "Real Shipped Work" section matching the landing page. Aligned emails, logos, and footer social links.
+   - about.html: Updated mission statement to focus on simple planning, no middle-men, and direct bargaining options. Aligned footer tags.
+   - book.html: Booking details updated to highlight Free Project Audits and straightforward project description fields. Mapped dropdown options to "Custom App / Website Build" and "Free Project Audit". All social profiles and connected logos updated.
+   - thank-you.html: Redirection status onboarding milestones, email, logo svg, and socials updated.
+
+5. Design System Migration — Arguuu Aesthetic Applied (style.css)
+   - Extracted fonts and color palette from the Arguuu Flutter app (C:\Code\Flagship Projects\Arguuu\arguuu\lib\core\theme\).
+   - Fonts extracted: Anthropic Serif (Display variants: Regular, Medium, Semibold, Bold, Regular Italic, Bold Italic), Anthropic Sans (Text/Display variants), Anthropic Mono Web.
+   - All font files copied from Arguuu assets to C:\Code\Websites\Wali.Dev\fonts\.
+   - Replaced Google Fonts import (Plus Jakarta Sans + Caveat) with self-hosted @font-face declarations for all three Anthropic font families.
+   - Color palette replaced from blue/slate (ChronoTask) to Arguuu's warm terracotta/copper palette:
+     * --primary: #C4724A (Copper/Terracotta)
+     * --primary-hover: #A85535 (Rust)
+     * --light-bg / --cream: #FAF6F0
+     * --card-bg: #FDF9F4 (Cotton White)
+     * --card-border: rgba(201,185,158,0.45) (Tan-based)
+     * --dark (text): #3D2B1F, --dark-muted: #7A5C4A, --ink: #1A110A
+     * --rust: #A85535, --brown: #5C3D2E, --dark-wood: #2A1F17, --tan: #C9B99E
+   - Typography hierarchy applied per Arguuu's app_theme.dart: Anthropic Serif → h1-h4 + logo, Anthropic Mono → eyebrow labels, Anthropic Sans → body/nav.
+   - Sticky note widget changed from yellow (Caveat) to warm parchment cream (Anthropic Serif italic).
+   - All shadow/glow colors migrated from blue-tinted to warm dark-wood/copper tints.
+   - Button hover glow updated to rgba(196,114,74) copper tones.
+   - Navbar background updated to warm cream rgba(250,246,240,0.82) with tan border.
+   - Grid dot pattern updated to warm ink rgba(42,31,23,0.07).
+
+6. Interactive Particles, Custom Cursor, Chip Toggles & De-duplication
+   - Restored original Caveat handwritten Google Font for the yellow sticky note widget (`.widget-sticky`) on home hero.
+   - Designed and built a custom copper pointer cursor overlay (`#cursor` and `#cursor-dot`) running via requestAnimationFrame in `script.js`. The cursor only renders on hover-capable pointer devices (`pointer: fine` and `hover: hover` in CSS) to avoid breaking mobile touch interfaces.
+   - Built a dynamic Three.js particle background utilizing 110 floating sphere meshes in Arguuu's copper, cream, and rust color schemes. Replaced CSS dot grid background. Features scroll Y parallax, mouse move parallax, and touch drag ripple displacements. Added Three.js scripts and canvas layers to `index.html`, `proof.html`, `about.html`, `book.html`, and `thank-you.html`.
+   - Replaced `<select>` engagement fields in `book.html` with multi-choice checkbox visual chips (Free Audit, Mobile App, Website) allowing users to select multiple options. Form submit handler in `script.js` parses chips list and saves as comma-separated values into localStorage CRM.
+   - Cleaned up cross-page visual redundancies:
+     * Removed duplicate D3.js interactive node map from `index.html` (now resides solely on `proof.html`).
+     * Removed duplicate Shipped Projects grid and bottom CTA linkouts from `proof.html`.
+     * Revamped `about.html` into a dedicated technical profile: hero statement, GitHub-style skill icon badges, shipped work highlights, Dart/Supabase code block, and direct human contact grids. Removed default selling CTAs.
+   - Tuned mobile CSS layouts: hid floating footer widgets and heavy hero widgets at `<768px`; scaled down interactive Before/After sliders to 240px height with 44px touch handles; compressed feature cards to 3-column rows without description text for an extremely optimized mobile look.
+   - Fixed the "How we can get started" pricing grid in `index.html` by removing inline styling overrides that forced 2 columns on mobile. Cards now stack vertically into a clean column layout on mobile screens and do not overflow. Marketed info has been simplified by removing the verbose feature bullet lists.
+   - Solved the multi-select chip toggle bug in `script.js` by switching from a label click listener to an input change listener to prevent double-firing checkbox state changes.
+   - Created `terms.html` to house Wali's professional Terms of Service covering scope creep limits, rules of engagement, code handover parameters, and limits of liability. Added Terms of Service consent text under the application submission form in `book.html` and linked it in all footers.
+   - Hardcoded the SVG logo (dots and lines forming "W" and "M") coordinates and color hex codes (`#C4724A` for terracotta copper primary dots, `#3D2B1F` for dark brown dots, and `rgba(61, 43, 31, 0.15)` for the line strokes) across all 6 pages to ensure uniform rendering and high contrast in all environments.
+
+7. Google SEO & Search Listings Setup
+   - Generated a premium 1200x630px Open Graph image showcasing Wali.Dev branding in terracotta, dark brown, and light cream, saved under rescs/og-image.png.
+   - Enhanced heads of index.html, about.html, book.html, proof.html, terms.html, and thank-you.html with Google-compliant metadata: robots constraints, canonical page paths, Open Graph (Facebook/LinkedIn) visual previews, and Twitter large-image cards. Set thank-you.html to "noindex, follow" to protect analytics accuracy.
+   - Programmed structured JSON-LD data for Google Search rich listings: index.html lists ProfessionalService offering mobile/dashboard builds and a free audit, about.html provides AboutPage/Person schema, book.html details ContactPage schema, and proof.html features WebPage case-study metadata.
+   - Inserted a google-site-verification-placeholder meta tag for easy Google Search Console setup.
+   - Built a custom robots.txt pointing to sitemap.xml and excluding thank-you.html.
+   - Generated a custom sitemap.xml listing all indexable pages (index, about, book, proof, terms) with search frequencies and priorities.
+   - Balanced budget search query visibility (e.g. "cheap app development", "very affordable website builder") with premium brand credibility: restored original, high-end titles, subtitles, and hero headings to maintain user trust.
+   - Added a naturally integrated SEO FAQ item under booking page FAQs specifically addressing budget questions (targeting "cheap custom development rates", "affordable website", "app builds") to rank on Google without affecting landing page copywriting.
+   - Refined JSON-LD Schema offering items to list "Affordable Flutter App Development" and "Affordable Custom Website Build" to project high-end capability in search listings.
+   - Hidden all visual and indexable references/links to "Vercel" to prevent search engine indexing associations: converted mock URLs to `.org` format, set outbound Vercel case-study links to `rel="nofollow"` so crawlers don't attribute link relations, and renamed D3 force-layout graph node labels to "Cloud Deployment".
+   - Created vercel.json in the project root to enforce clean URLs (removing .html extensions from browser paths and search listings) and inject standard security headers.

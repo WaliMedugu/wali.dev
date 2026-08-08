@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proof — Wali</title>
+    <meta name="description" content="Case study: Web Dashboard built with D3.js, REST APIs, and Supabase database integrations.">
+    
+    <!-- Google SEO & Search Listings Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wali.dev/proof.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wali.dev/proof.html">
+    <meta property="og:title" content="Proof & Case Studies — Wali">
+    <meta property="og:description" content="Case study: Web Dashboard built with D3.js, REST APIs, and Supabase database integrations.">
+    <meta property="og:image" content="https://wali.dev/rescs/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Proof & Case Studies by Wali">
+    <meta property="og:site_name" content="Wali.Dev">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://wali.dev/proof.html">
+    <meta name="twitter:title" content="Proof & Case Studies — Wali">
+    <meta name="twitter:description" content="Case study: Web Dashboard built with D3.js, REST APIs, and Supabase database integrations.">
+    <meta name="twitter:image" content="https://wali.dev/rescs/og-image.png">
+
+    <!-- Structured Data / JSON-LD for Proof Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Proof & Case Studies",
+      "description": "Case study of a web dashboard and supply chain analytics built with D3.js, REST APIs, and Supabase database integrations.",
+      "url": "https://wali.dev/proof.html"
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- D3.js library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div class="grid-bg-wrapper">
+        <!-- Navigation Header -->
+        <header class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="logo">
+                    <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                        <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                    </svg>
+                    WALI.DEV
+                </a>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="proof.html" class="nav-link active">Proof</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="book.html" class="nav-link">Hire & Bargain</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="mailto:blueparticlestudios@gmail.com" class="email-link">blueparticlestudios@gmail.com</a>
+                    <a href="book.html" class="btn btn-primary">Hire & Bargain</a>
+                </div>
+                <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
+                    Menu <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="proof.html">Proof</a>
+            <a href="about.html">About</a>
+            <a href="book.html">Hire & Bargain</a>
+            <a href="mailto:blueparticlestudios@gmail.com" style="font-size: 16px; font-weight: 500; margin-top: 20px; color: var(--primary);">blueparticlestudios@gmail.com</a>
+        </div>
+
+        <!-- Work Hero Section -->
+        <section class="hero container">
+            <div class="hero-content">
+                <span class="eyebrow">My Work</span>
+                <h1>One working demo is worth <span class="accent">more than ten empty screenshots.</span></h1>
+                <p class="hero-desc">
+                    This case study shows how I build and connect databases, APIs, interactive charts, and client apps.
+                </p>
+            </div>
+        </section>
+
+        <!-- Case Study Details -->
+        <section class="container" style="padding-top: 0;">
+            <div class="split-section">
+                <div>
+                    <span class="eyebrow">Case Study</span>
+                    <h2 class="section-title">Delivery & Inventory Dashboard</h2>
+                    <p class="section-desc">
+                        A web dashboard that visualizes supply chain deliveries and warehouse stocks in real-time. It replaces manual paperwork and spreadsheet updates.
+                    </p>
+                    <div class="card-badges" style="margin-bottom: 24px;">
+                        <span class="badge">Flutter App</span>
+                        <span class="badge">Web Dashboard</span>
+                        <span class="badge">D3.js Charts</span>
+                        <span class="badge">REST APIs</span>
+                        <span class="badge">Supabase DB</span>
+                        <span class="badge">Node.js Server</span>
+                    </div>
+                </div>
+                <div>
+                    <!-- Case Study Info Cards -->
+                    <div class="metrics-grid" style="grid-template-columns: 1fr 1fr; gap: 16px; margin: 0;">
+                        <div class="metric-card">
+                            <div class="metric-label">Problem</div>
+                            <div class="metric-val">Manual spreadsheets</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Solution</div>
+                            <div class="metric-val">Live Web Dashboard</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Back-End</div>
+                            <div class="metric-val">Node.js + Supabase</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Front-End</div>
+                            <div class="metric-val">HTML, JS, D3.js</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Panel -->
+        <section class="container">
+            <div class="proof-panel" style="margin-top: 0;">
+                <div class="proof-panel-header">
+                    <span class="eyebrow">Live Demo</span>
+                    <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Database & Delivery Flows</h2>
+                    <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+                        This shows how the data flows from database tables, through APIs, and straight to client dashboards. Drag nodes to test the physics.
+                    </p>
+                </div>
+                <div class="graph-container" id="d3-graph-container" aria-label="Directed graph showing system dependencies and product flow">
+                    <div class="graph-fallback">Loading graph demo…</div>
+                </div>
+                <p class="graph-caption">
+                    Interactive chart representing database flows, API routers, and app synchronization.
+                </p>
+            </div>
+        </section>
+
+        <!-- What This Proves Section -->
+        <section class="container">
+            <div style="max-width: 700px; margin-bottom: 6px;">
+                <span class="eyebrow">My Capabilities</span>
+                <h2 class="section-title">Clean code, simple structures, solid execution.</h2>
+                <p class="section-desc">
+                    If I can code charts, design API gateways, and manage complex databases, the same coding skills apply to any custom app, dashboard, internal tool, or client website you need built.
+                </p>
+            </div>
+            
+            <div class="capability-grid">
+                <div class="capability-card">
+                    <h3 style="color: var(--primary);">Web Dashboards</h3>
+                    <p>Admin systems, user management portals, data views, and custom stats tracking.</p>
+                </div>
+                <div class="capability-card">
+                    <h3 style="color: var(--success);">Internal Staff Tools</h3>
+                    <p>Workflow trackers, inventory tools, checkout panels, and operational consoles.</p>
+                </div>
+                <div class="capability-card">
+                    <h3 style="color: var(--purple);">Mobile MVPs</h3>
+                    <p>Polished Flutter apps for iOS & Android connected to secure, database backends.</p>
+                </div>
+                <div class="capability-card">
+                    <h3 style="color: var(--warning);">Interactive Charts</h3>
+                    <p>D3.js charts, maps, custom visualization systems, and reports.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work CTA Section -->
+        <section class="container">
+            <div class="cta-box">
+                <span class="eyebrow">Ready to build?</span>
+                <h2>Let's build your mobile app or custom dashboard.</h2>
+                <p>
+                    Submit your requirements and budget so we can bargain, or secure a free project audit.
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="book.html" class="btn btn-primary btn-large">Book & Bargain Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="container">
+                <!-- Floating Dashboard widgets in Footer (Populated dynamically by script.js) -->
+                <div class="footer-widgets-area"></div>
+
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo">
+                            <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                                <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                            </svg>
+                            WALI.DEV
+                        </a>
+                        <p class="footer-desc">Affordable & reliable dev team scaling mobile apps and web dashboards.</p>
+                    </div>
+                    <div class="footer-links-grid">
+                        <div class="footer-col">
+                            <h4>Menu</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="proof.html">Proof</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="book.html">Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="mailto:blueparticlestudios@gmail.com">blueparticlestudios@gmail.com</a></li>
+                                <li><a href="tel:+2349061950587" style="white-space:nowrap;">+234 906 195 0587</a></li>
+                            </ul>
+                            <h4 style="margin-top: 20px;">Socials</h4>
+                            <ul>
+                                <li><a href="https://wa.me/2349061950587" target="_blank">WhatsApp</a></li>
+                                <li><a href="https://instagram.com/w_wali_i" target="_blank">Instagram</a></li>
+                                <li><a href="https://github.com/WaliMedugu" target="_blank">GitHub</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Wali. Premium technical partner. <a href="terms.html" style="color: var(--primary); text-decoration: none;">Terms of Service</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Main JS entrypoint -->
+    <script src="script.js"></script>
+</body>
+</html>

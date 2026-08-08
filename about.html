@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Wali</title>
+    <meta name="description" content="About Wali. Premium full-stack developer building production Flutter apps, web dashboards, REST APIs, and Supabase systems.">
+    
+    <!-- Google SEO & Search Listings Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wali.dev/about.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wali.dev/about.html">
+    <meta property="og:title" content="About — Wali">
+    <meta property="og:description" content="About Wali. Premium full-stack developer building production Flutter apps, web dashboards, REST APIs, and Supabase systems.">
+    <meta property="og:image" content="https://wali.dev/rescs/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="About Wali - Full-Stack Developer Profile">
+    <meta property="og:site_name" content="Wali.Dev">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://wali.dev/about.html">
+    <meta name="twitter:title" content="About — Wali">
+    <meta name="twitter:description" content="About Wali. Premium full-stack developer building production Flutter apps, web dashboards, REST APIs, and Supabase systems.">
+    <meta name="twitter:image" content="https://wali.dev/rescs/og-image.png">
+
+    <!-- Structured Data / JSON-LD for Profile/About Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Wali",
+      "description": "About Wali, a premium full-stack developer building production Flutter apps, web dashboards, REST APIs, and Supabase systems.",
+      "url": "https://wali.dev/about.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Wali Medugu",
+        "jobTitle": "Full-Stack Developer",
+        "sameAs": [
+          "https://github.com/WaliMedugu",
+          "https://instagram.com/w_wali_i"
+        ]
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+
+    <div class="grid-bg-wrapper">
+        <!-- Navigation Header -->
+        <header class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="logo">
+                    <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                        <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                    </svg>
+                    WALI.DEV
+                </a>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="proof.html" class="nav-link">Proof</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="book.html" class="nav-link">Hire & Bargain</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="mailto:blueparticlestudios@gmail.com" class="email-link">blueparticlestudios@gmail.com</a>
+                    <a href="book.html" class="btn btn-primary">Hire & Bargain</a>
+                </div>
+                <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
+                    Menu <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="proof.html">Proof</a>
+            <a href="about.html">About</a>
+            <a href="book.html">Hire & Bargain</a>
+            <a href="mailto:blueparticlestudios@gmail.com" style="font-size: 16px; font-weight: 500; margin-top: 20px; color: var(--primary);">blueparticlestudios@gmail.com</a>
+        </div>
+
+        <!-- About Hero Section -->
+        <section class="hero container">
+            <div class="hero-content" style="text-align: left; max-width: 800px; margin: 0;">
+                <span class="eyebrow">Full-Stack Developer</span>
+                <h1 style="text-align: left;">Engineering mobile apps and <span class="accent">platforms that scale.</span></h1>
+                <p class="hero-desc" style="text-align: left; max-width: 720px; margin-left: 0; margin-right: 0;">
+                    I'm Wali — a full-stack developer who builds production Flutter apps, REST APIs, and web dashboards that real users depend on every day. My work ships to the Play Store, runs on Supabase and Firebase, and handles the kind of data flows that break basic no-code tools. I work directly with clients — no agency overhead, no inflated rates.
+                </p>
+            </div>
+        </section>
+
+        <!-- Technical Skill Map Section -->
+        <section class="container" style="padding-top: 0;">
+            <span class="eyebrow">Technical Skill Map</span>
+            <h2 class="section-title" style="font-size: 24px; margin-bottom: 24px;">Core Tech & Languages</h2>
+            
+            <div class="skills-grid">
+                <!-- Flutter / Dart -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #02569B;"><path d="M3 12l9-9 9 9-9 9-9-9z"/></svg>
+                    <span>Flutter / Dart</span>
+                    <span class="skill-level">Expert</span>
+                </div>
+                <!-- Supabase -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3ECF8E;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <span>Supabase</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <!-- Node.js -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #339933;"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
+                    <span>Node.js API</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <!-- PostgreSQL -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #336791;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <span>PostgreSQL</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <!-- Firebase -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #FFCA28;"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 1.5 2 2.5 2.5 4.5.4 1.6-.2 3.4-1.5 4.5"/></svg>
+                    <span>Firebase Sync</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <!-- D3.js -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #F9A03F;"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                    <span>D3.js Visualization</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <!-- HTML / CSS / JS -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #E34F26;"><path d="M16 18l6-6-6-6M8 6L2 12l6 6"/></svg>
+                    <span>HTML / CSS / JS</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <!-- Git -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #F1502F;"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/><path d="M9 6h5a3 3 0 0 1 3 3v6"/></svg>
+                    <span>Git / CI-CD</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <!-- Docker -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #2496ED;"><rect x="2" y="2" width="20" height="20" rx="4"/></svg>
+                    <span>Docker Containers</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <!-- REST APIs -->
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #475569;"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/></svg>
+                    <span>REST / JSON APIs</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Achievements Section -->
+        <section class="container">
+            <span class="eyebrow">Projects & Achievements</span>
+            <h2 class="section-title" style="font-size: 24px; margin-bottom: 24px;">Shipped Commercial Work</h2>
+            
+            <div class="projects-grid">
+                <!-- Arguuu -->
+                <div class="feature-card" style="justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                            <img src="rescs/Untitled design (26).png" alt="Arguuu Logo" style="width: 48px; height: 48px; border-radius: 12px; object-fit: cover; border: 1px solid var(--card-border);">
+                            <div>
+                                <h3 style="margin: 0; font-size: 18px;">Arguuu</h3>
+                                <div style="font-size: 12px; color: var(--primary); font-weight: 700;">Mobile Debate App</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; margin-bottom: 20px;">
+                            A cross-platform mobile debate app built with Flutter and Supabase. Features real-time state sync, debate card voting, custom user stats dashboard, and push notifications.
+                        </p>
+                        <ul class="checklist" style="margin-top: 0; margin-bottom: 20px;">
+                            <li style="font-size: 13px; margin-bottom: 8px;">★ 4.8 Rating on Google Play Store</li>
+                            <li style="font-size: 13px; margin-bottom: 8px;">Supabase real-time database sync</li>
+                            <li style="font-size: 13px; margin-bottom: 8px;">Interactive charts visualization</li>
+                        </ul>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.arguuu.app&hl=en_AU" target="_blank" class="btn btn-secondary btn-block" style="text-align: center; justify-content: center; width: 100%;">View on Play Store</a>
+                </div>
+
+                <!-- Harbor Haven Foundation -->
+                <div class="feature-card" style="justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                            <img src="rescs/harbor_haven_logo.png" alt="Harbor Haven Logo" style="width: 48px; height: 48px; border-radius: 12px; object-fit: cover; border: 1px solid var(--card-border);">
+                            <div>
+                                <h3 style="margin: 0; font-size: 18px;">Harbor Haven Foundation</h3>
+                                <div style="font-size: 12px; color: var(--success); font-weight: 700;">Charity Landing Platform</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; margin-bottom: 20px;">
+                            A high-converting landing page and database dashboard integration for a charity foundation. Fully responsive layout optimized for quick loading and newsletter capture.
+                        </p>
+                        <ul class="checklist" style="margin-top: 0; margin-bottom: 20px;">
+                            <li style="font-size: 13px; margin-bottom: 8px;">100% responsive client layout</li>
+                            <li style="font-size: 13px; margin-bottom: 8px;">Newsletter CRM hookup</li>
+                            <li style="font-size: 13px; margin-bottom: 8px;">Cloud deployment & custom analytics</li>
+                        </ul>
+                    </div>
+                    <a href="https://harborhavenfoundation.vercel.app/" rel="nofollow" target="_blank" class="btn btn-secondary btn-block" style="text-align: center; justify-content: center; width: 100%;">Visit Live Website</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Quality Section -->
+        <section class="container">
+            <span class="eyebrow">Engineering Standards</span>
+            <h2 class="section-title" style="font-size: 24px; margin-bottom: 12px;">Code Quality Sample</h2>
+            <p class="section-desc" style="max-width: 700px; margin-bottom: 24px;">
+                This snippet showcases how I write clean, maintainable architecture in Dart. No sloppy global state, clear separations of concerns, and robust client-side routing logic.
+            </p>
+            
+            <div class="code-block">
+                <pre><code><span class="code-keyword">abstract class</span> <span class="code-class">DebatesDataSource</span> {
+  <span class="code-class">Future</span>&lt;<span class="code-class">List</span>&lt;<span class="code-class">DebateModel</span>&gt;&gt; <span class="code-value">getTrendingDebates</span>({<span class="code-keyword">required</span> <span class="code-class">int</span> <span class="code-value">limit</span>});
+  <span class="code-class">Future</span>&lt;<span class="code-keyword">void</span>&gt; <span class="code-value">voteOnDebate</span>({<span class="code-keyword">required</span> <span class="code-class">String</span> <span class="code-value">debateId</span>, <span class="code-keyword">required</span> <span class="code-class">bool</span> <span class="code-value">isFor</span>});
+}
+
+<span class="code-keyword">class</span> <span class="code-class">SupabaseDebatesDataSourceImpl</span> <span class="code-keyword">implements</span> <span class="code-class">DebatesDataSource</span> {
+  <span class="code-keyword">final</span> <span class="code-class">SupabaseClient</span> <span class="code-value">_client</span>;
+  <span class="code-value">SupabaseDebatesDataSourceImpl</span>(<span class="code-keyword">this</span>.<span class="code-value">_client</span>);
+
+  <span class="code-keyword">@override</span>
+  <span class="code-class">Future</span>&lt;<span class="code-class">List</span>&lt;<span class="code-class">DebateModel</span>&gt;&gt; <span class="code-value">getTrendingDebates</span>({<span class="code-keyword">required</span> <span class="code-class">int</span> <span class="code-value">limit</span>}) <span class="code-keyword">async</span> {
+    <span class="code-keyword">final</span> <span class="code-value">response</span> = <span class="code-keyword">await</span> <span class="code-value">_client</span>
+        .<span class="code-value">from</span>(<span class="code-string">'debates'</span>)
+        .<span class="code-value">select</span>(<span class="code-string">'*, profiles(*), votes(*)'</span>)
+        .<span class="code-value">order</span>(<span class="code-string">'trending_score'</span>, <span class="code-value">descending:</span> <span class="code-keyword">true</span>)
+        .<span class="code-value">limit</span>(<span class="code-value">limit</span>);
+    <span class="code-keyword">return</span> <span class="code-value">response</span>.<span class="code-value">map</span>((<span class="code-value">data</span>) =&gt; <span class="code-class">DebateModel</span>.<span class="code-value">fromJson</span>(<span class="code-value">data</span>)).<span class="code-value">toList</span>();
+  }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="container" style="padding-bottom: 80px;">
+            <span class="eyebrow">Get in Touch</span>
+            <h2 class="section-title" style="font-size: 24px; margin-bottom: 12px;">Direct Channels</h2>
+            <p class="section-desc" style="max-width: 600px; margin-bottom: 24px;">
+                Ready to bargain or check my calendar? Reach out via WhatsApp or email. I respond directly without any sales reps in the middle.
+            </p>
+            
+            <div class="contact-links-grid">
+                <a href="mailto:blueparticlestudios@gmail.com" class="contact-link-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <div>
+                        <div style="font-weight:700;">Email Me</div>
+                        <div style="font-size:12px; color: var(--dark-muted); font-weight:400; margin-top:2px;">blueparticlestudios@gmail.com</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/2349061950587" target="_blank" class="contact-link-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    <div>
+                        <div style="font-weight:700;">WhatsApp Direct</div>
+                        <div style="font-size:12px; color: var(--dark-muted); font-weight:400; margin-top:2px;">+234 906 195 0587</div>
+                    </div>
+                </a>
+                <a href="https://github.com/WaliMedugu" target="_blank" class="contact-link-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    <div>
+                        <div style="font-weight:700;">GitHub Repository</div>
+                        <div style="font-size:12px; color: var(--dark-muted); font-weight:400; margin-top:2px;">@WaliMedugu</div>
+                    </div>
+                </a>
+                <a href="https://instagram.com/w_wali_i" target="_blank" class="contact-link-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    <div>
+                        <div style="font-weight:700;">Instagram Profile</div>
+                        <div style="font-size:12px; color: var(--dark-muted); font-weight:400; margin-top:2px;">@w_wali_i</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo">
+                            <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                                <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                            </svg>
+                            WALI.DEV
+                        </a>
+                        <p class="footer-desc">Premium technical partner for startups and agencies scaling mobile and web platforms.</p>
+                    </div>
+                    <div class="footer-links-grid">
+                        <div class="footer-col">
+                            <h4>Menu</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="proof.html">Proof</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="book.html">Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="mailto:blueparticlestudios@gmail.com">blueparticlestudios@gmail.com</a></li>
+                                <li><a href="tel:+2349061950587" style="white-space:nowrap;">+234 906 195 0587</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Wali. Premium technical partner. <a href="terms.html" style="color: var(--primary); text-decoration: none;">Terms of Service</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Main JS entrypoint -->
+    <script src="script.js"></script>
+</body>
+</html>

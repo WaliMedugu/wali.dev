@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Wali</title>
+    <meta name="description" content="Terms of Service for Wali.Dev. Scope alignment, code delivery standards, and rules of engagement.">
+    
+    <!-- Google SEO & Search Listings Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wali.dev/terms.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wali.dev/terms.html">
+    <meta property="og:title" content="Terms of Service — Wali">
+    <meta property="og:description" content="Terms of Service for Wali.Dev. Scope alignment, code delivery standards, and rules of engagement.">
+    <meta property="og:image" content="https://wali.dev/rescs/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Terms of Service for Wali.Dev">
+    <meta property="og:site_name" content="Wali.Dev">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://wali.dev/terms.html">
+    <meta name="twitter:title" content="Terms of Service — Wali">
+    <meta name="twitter:description" content="Terms of Service for Wali.Dev. Scope alignment, code delivery standards, and rules of engagement.">
+    <meta name="twitter:image" content="https://wali.dev/rescs/og-image.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+
+    <div class="grid-bg-wrapper">
+        <!-- Navigation Header -->
+        <header class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="logo">
+                    <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                        <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                        <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                        <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                    </svg>
+                    WALI.DEV
+                </a>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="proof.html" class="nav-link">Proof</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="book.html" class="nav-link">Hire & Bargain</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="mailto:blueparticlestudios@gmail.com" class="email-link">blueparticlestudios@gmail.com</a>
+                    <a href="book.html" class="btn btn-primary">Hire & Bargain</a>
+                </div>
+                <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
+                    Menu <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="proof.html">Proof</a>
+            <a href="about.html">About</a>
+            <a href="book.html">Hire & Bargain</a>
+            <a href="mailto:blueparticlestudios@gmail.com" style="font-size: 16px; font-weight: 500; margin-top: 20px; color: var(--primary);">blueparticlestudios@gmail.com</a>
+        </div>
+
+        <!-- Terms of Service Content Section -->
+        <section class="container" style="padding-top: 100px; padding-bottom: 100px; max-width: 800px;">
+            <span class="eyebrow">Legal & Conduct</span>
+            <h1 style="font-size: 32px; margin-bottom: 24px;">Terms of Service</h1>
+            <p class="hero-desc" style="font-size: 16px; margin-bottom: 40px; color: var(--dark-muted);">
+                Welcome to Wali.Dev. These terms establish the rules of engagement, code delivery standards, and policies to protect both you (the client) and me (the developer) against abuse, scope creep, and workmanship complaints.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 32px; text-align: left;">
+                <!-- Clause 1 -->
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--primary);">1. Fixed Scope & Scope Creep Prevention</h3>
+                    <p style="font-size: 14px; color: var(--dark); line-height: 1.6;">
+                        All project builds and billing milestones are bargained based on a predefined set of written features and UI specifications. 
+                        <strong>Scope creep is strictly prohibited.</strong> Any feature requests, layout changes, or extra pages requested after coding commences will not be worked on until we review the changes and agree upon a separate, additional budget.
+                    </p>
+                </div>
+
+                <!-- Clause 2 -->
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--primary);">2. Against Abuse & Harassment</h3>
+                    <p style="font-size: 14px; color: var(--dark); line-height: 1.6;">
+                        I maintain high standards of professional respect. Hostile behavior, threats of feedback abuse, chargeback threats, or unreasonable demands for 24/7 instant messaging responses will result in immediate termination of the agreement. In such cases, all development ceases, and the license to use the written code is revoked until all work done is paid for in full.
+                    </p>
+                </div>
+
+                <!-- Clause 3 -->
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--primary);">3. Rules of Handover & Support</h3>
+                    <p style="font-size: 14px; color: var(--dark); line-height: 1.6;">
+                        Code is delivered clean, commented, and hosted on Git repositories (GitHub/GitLab). I provide 3 months of free post-launch bug-fixing support for issues directly related to my code. This support does not cover:
+                    </p>
+                    <ul class="checklist" style="margin-top: 12px; font-size: 14px;">
+                        <li>Third-party platform or API deprecations (e.g. Google Maps, OpenAI API shifts).</li>
+                        <li>Hosting or database provider failures (e.g. Supabase, Firebase service outages).</li>
+                        <li>Bugs introduced by client-side modifications.</li>
+                    </ul>
+                </div>
+
+                <!-- Clause 4 -->
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--primary);">4. Limits of Liability</h3>
+                    <p style="font-size: 14px; color: var(--dark); line-height: 1.6;">
+                        Wali.Dev operates on a best-effort basis for custom software engineering. Software is provided "as is" without warranty of merchantability or fitness for a particular purpose beyond the 3-month support agreement. I am not liable for any financial losses, service outages, or security breaches resulting from third-party hosting, package dependencies, or user database configurations.
+                    </p>
+                </div>
+
+                <!-- Clause 5 -->
+                <div>
+                    <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--primary);">5. Rules for Myself (Workmanship Commitment)</h3>
+                    <p style="font-size: 14px; color: var(--dark); line-height: 1.6;">
+                        I hold my development process to strict engineering parameters:
+                    </p>
+                    <ul class="checklist" style="margin-top: 12px; font-size: 14px;">
+                        <li><strong>No Template Bloat:</strong> I build clean layouts and clean database schemas tailored to your scale.</li>
+                        <li><strong>No Middle-Men:</strong> You deal directly with me. No project managers distorting the scope.</li>
+                        <li><strong>Honest Auditing:</strong> If a feature request is unnecessary or can be built simpler, I will advocate for the cheaper option.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo">
+                            <svg class="logo-svg" width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 3,3 L 7,13 L 11,3 L 15,13 L 19,3 L 19,13 L 23,7 L 27,13 L 27,3" stroke="rgba(61, 43, 31, 0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <circle cx="3" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="7" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="11" cy="3" r="3" fill="#3D2B1F"/>
+                                <circle cx="15" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="19" cy="3" r="3" fill="#C4724A"/>
+                                <circle cx="19" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="23" cy="7" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="13" r="3" fill="#3D2B1F"/>
+                                <circle cx="27" cy="3" r="3" fill="#3D2B1F"/>
+                            </svg>
+                            WALI.DEV
+                        </a>
+                        <p class="footer-desc">Premium technical partner for startups and agencies scaling mobile and web platforms.</p>
+                    </div>
+                    <div class="footer-links-grid">
+                        <div class="footer-col">
+                            <h4>Menu</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="proof.html">Proof</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="book.html">Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="mailto:blueparticlestudios@gmail.com">blueparticlestudios@gmail.com</a></li>
+                                <li><a href="tel:+2349061950587" style="white-space:nowrap;">+234 906 195 0587</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Wali. Premium technical partner. <a href="terms.html" style="color: var(--primary); text-decoration: none;">Terms of Service</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Main JS entrypoint -->
+    <script src="script.js"></script>
+</body>
+</html>
