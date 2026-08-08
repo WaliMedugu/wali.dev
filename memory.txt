@@ -74,7 +74,7 @@ Features Added:
    - Generated a premium 1200x630px Open Graph image showcasing Wali.Dev branding in terracotta, dark brown, and light cream, saved under rescs/og-image.png.
    - Enhanced heads of index.html, about.html, book.html, proof.html, terms.html, and thank-you.html with Google-compliant metadata: robots constraints, canonical page paths, Open Graph (Facebook/LinkedIn) visual previews, and Twitter large-image cards. Set thank-you.html to "noindex, follow" to protect analytics accuracy.
    - Programmed structured JSON-LD data for Google Search rich listings: index.html lists ProfessionalService offering mobile/dashboard builds and a free audit, about.html provides AboutPage/Person schema, book.html details ContactPage schema, and proof.html features WebPage case-study metadata.
-   - Inserted a google-site-verification-placeholder meta tag for easy Google Search Console setup.
+   - Added live Google Search Console HTML verification key: l4oed3E_weF2aziruCxiyGRrj56gF1PM6od4GQQBLa8.
    - Built a custom robots.txt pointing to sitemap.xml and excluding thank-you.html.
    - Generated a custom sitemap.xml listing all indexable pages (index, about, book, proof, terms) with search frequencies and priorities.
    - Balanced budget search query visibility (e.g. "cheap app development", "very affordable website builder") with premium brand credibility: restored original, high-end titles, subtitles, and hero headings to maintain user trust.
