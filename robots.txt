@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you.html
 
-Sitemap: https://wali.dev/sitemap.xml
+Sitemap: https://wali-devv.vercel.app/sitemap.xml

@@ -85,3 +85,4 @@ Features Added:
    - Initialized Git locally, set up a standard .gitignore file to prevent staging temporary configurations, and pushed the entire production codebase to the remote GitHub repository at https://github.com/WaliMedugu/wali.dev on branch main.
    - Connected booking-form on book.html directly to Web3Forms API using public access key 5a7950e4-2a36-43be-af49-0ea281ac81d2, enabling production email delivery of lead submissions to blueparticlestudios@gmail.com with async load states and localStorage backup.
    - Added Google Search Console HTML verification file: googlee44ee796011ac16d.html to the root directory.
+   - Reconfigured all canonical links, structured schemas, robots.txt, and sitemap.xml to temporarily point to https://wali-devv.vercel.app/ (Option B) for Google Search Console verification testing.
