@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initComparisonSliders();
     initCustomCursor();
     initChipToggles();
+    initArguuuSlider();
 });
 
 /* ==========================================================================
@@ -949,5 +950,90 @@ function initComparisonSliders() {
             // Set initial state
             updateSlider(input.value);
         }
+    });
+}
+
+/* ==========================================================================
+   Arguuu Swipeable Screenshot Gallery Component
+   ========================================================================== */
+function initArguuuSlider() {
+    const slider = document.getElementById('arguuu-slider');
+    const dots = document.querySelectorAll('#arguuu-dots .dot');
+    const prevBtn = document.getElementById('phone-prev');
+    const nextBtn = document.getElementById('phone-next');
+    
+    if (!slider || dots.length === 0) return;
+    
+    const totalSlides = dots.length;
+    let currentIdx = 0;
+    
+    // Helper to scroll to specific index
+    function scrollToIdx(idx) {
+        if (idx < 0 || idx >= totalSlides) return;
+        const slideWidth = slider.clientWidth;
+        slider.scrollTo({
+            left: idx * slideWidth,
+            behavior: 'smooth'
+        });
+        updateDots(idx);
+        currentIdx = idx;
+    }
+    
+    // Update dots active class
+    function updateDots(activeIdx) {
+        dots.forEach((dot, index) => {
+            if (index === activeIdx) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    // Handle manual scroll (swipe or wheel)
+    let isScrolling;
+    slider.addEventListener('scroll', () => {
+        // Debounce dot update while scrolling to avoid jitter
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            const slideWidth = slider.clientWidth;
+            if (slideWidth > 0) {
+                const computedIdx = Math.round(slider.scrollLeft / slideWidth);
+                if (computedIdx !== currentIdx && computedIdx >= 0 && computedIdx < totalSlides) {
+                    currentIdx = computedIdx;
+                    updateDots(currentIdx);
+                }
+            }
+        }, 100);
+    });
+    
+    // Dot click listeners
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            const idx = parseInt(e.target.getAttribute('data-index'), 10);
+            scrollToIdx(idx);
+        });
+    });
+    
+    // Arrows listeners
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            let targetIdx = currentIdx - 1;
+            if (targetIdx < 0) targetIdx = totalSlides - 1; // Wrap around
+            scrollToIdx(targetIdx);
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            let targetIdx = currentIdx + 1;
+            if (targetIdx >= totalSlides) targetIdx = 0; // Wrap around
+            scrollToIdx(targetIdx);
+        });
+    }
+    
+    // Recalculate on window resize to avoid alignment issues
+    window.addEventListener('resize', () => {
+        scrollToIdx(currentIdx);
     });
 }

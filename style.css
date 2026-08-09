@@ -2306,3 +2306,171 @@ h1, h2, h3, h4 {
     }
 }
 
+/* ==========================================================================
+   Arguuu Case Study Gallery (Phone Mockup Slider)
+   ========================================================================== */
+.arguuu-gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.phone-mockup {
+    position: relative;
+    width: 290px;
+    height: 580px;
+    background-color: var(--dark-wood);
+    border: 12px solid var(--dark-wood);
+    border-radius: 40px;
+    box-shadow: var(--shadow-premium), 0 0 0 4px var(--sand);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.phone-notch::before, .phone-notch::after {
+    display: none;
+}
+
+.phone-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    background-color: #000;
+    border-radius: 28px;
+}
+
+.phone-slider::-webkit-scrollbar {
+    display: none;
+}
+.phone-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.phone-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.phone-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.phone-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    background: rgba(253, 249, 244, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    z-index: 90;
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    box-shadow: 0 4px 12px rgba(42, 31, 23, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.phone-arrow:hover {
+    background: rgba(253, 249, 244, 0.6);
+    color: var(--primary);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 16px rgba(42, 31, 23, 0.12);
+}
+
+.phone-arrow.prev {
+    left: 12px;
+}
+
+.phone-arrow.next {
+    right: 12px;
+}
+
+.phone-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.phone-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--sand);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.phone-dots .dot:hover {
+    background-color: var(--primary);
+}
+
+.phone-dots .dot.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+    width: 16px;
+    border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+    .phone-mockup {
+        width: 250px;
+        height: 500px;
+        border-width: 8px;
+        border-radius: 32px;
+    }
+    .phone-notch {
+        width: 90px;
+        height: 20px;
+    }
+    .phone-slider {
+        border-radius: 24px;
+    }
+    .phone-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+

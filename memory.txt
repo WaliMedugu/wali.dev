@@ -86,3 +86,12 @@ Features Added:
    - Connected booking-form on book.html directly to Web3Forms API using public access key 5a7950e4-2a36-43be-af49-0ea281ac81d2, enabling production email delivery of lead submissions to blueparticlestudios@gmail.com with async load states and localStorage backup.
    - Added Google Search Console HTML verification file: googlee44ee796011ac16d.html to the root directory.
    - Reconfigured all canonical links, structured schemas, robots.txt, and sitemap.xml to temporarily point to https://wali-devv.vercel.app/ (Option B) for Google Search Console verification testing.
+
+8. Arguuu Case Study App Screenshots Integration (proof.html, style.css, script.js)
+   - Copied screenshots and cover from C:\Code\Resources\App Screenshots\Arguuu to rescs/arguuu/ inside the workspace.
+   - Integrated the Arguuu Case Study section on proof.html showcasing it as a live app built for a client for $40, including Play Store badges and external links.
+   - Built a swipeable, touch-friendly phone mockup slider component using CSS scroll snap and flexbox to present screenshots on mobile viewports without taking up the entire screen height.
+   - Added left/right navigation arrows, pagination dots, drag listener hooks, and window resize synchronization within script.js and style.css for smooth slider operation on all screen sizes.
+   - Prepended rescs/arguuu/image.png as the initial slide in the screenshots slider (making 9 slides and pagination dots in total).
+   - Removed the detailed speaker/camera digital island notch graphic in favor of a subtle, low-opacity, tiny camera pill notch on the mockup.
+   - Replaced default overlay navigation arrow button styles with premium glassmorphic matte buttons.
